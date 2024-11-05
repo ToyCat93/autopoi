@@ -125,7 +125,7 @@ public class ExcelImportServer extends ImportBaseService {
 			return null;
 		}
 		Object obj = null;
-		switch (cell.getCellTypeEnum()) {
+		switch (cell.getCellType()) {
 		case STRING:
 			obj = cell.getStringCellValue();
 			break;

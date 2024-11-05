@@ -1,6 +1,6 @@
 /**
  * Copyright 2013-2015 JEECG (jeecgos@163.com)
- *   
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -15,13 +15,9 @@
  */
 package org.jeecgframework.poi.excel.imports.sax;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import com.google.common.collect.Lists;
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.model.SharedStringsTable;
-import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.jeecgframework.poi.excel.entity.enmus.CellValueType;
 import org.jeecgframework.poi.excel.entity.sax.SaxReadCellEntity;
 import org.jeecgframework.poi.excel.imports.sax.parse.ISaxRowRead;
@@ -29,11 +25,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.google.common.collect.Lists;
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
 
 /**
  * 回调接口
- * 
+ *
  * @author JEECG
  * @date 2014年12月29日 下午9:50:09
  */
@@ -92,7 +90,7 @@ public class SheetHandler extends DefaultHandler {
 		if (CellValueType.String.equals(type)) {
 			try {
 				int idx = Integer.parseInt(lastContents);
-				lastContents = new XSSFRichTextString(sst.getEntryAt(idx)).toString();
+				lastContents = sst.getItemAt(idx).toString();
 			} catch (Exception e) {
 
 			}
@@ -109,7 +107,7 @@ public class SheetHandler extends DefaultHandler {
 			String value = lastContents.trim();
 			value = value.equals("") ? " " : value;
 			if (CellValueType.Date.equals(type)) {
-				Date date = HSSFDateUtil.getJavaDate(Double.valueOf(value));
+				Date date = DateUtil.getJavaDate(Double.parseDouble(value));
 				rowlist.add(curCol, new SaxReadCellEntity(CellValueType.Date, date));
 			} else if (CellValueType.Number.equals(type)) {
 				BigDecimal bd = new BigDecimal(value);

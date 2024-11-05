@@ -4,7 +4,7 @@
 	<groupId>org.jeecgframework</groupId>
 	<artifactId>autopoi-parent</artifactId>
 
-	<version>1.4.11</version>
+	<version>1.4.11-next</version>
 	<packaging>pom</packaging>
 
 	<name>autopoi-parent</name>
@@ -36,8 +36,8 @@
     </developers>
 
 	<properties>
-		<autopoi.version>1.4.11</autopoi.version>
-		<poi.version>4.1.2</poi.version>
+		<autopoi.version>1.4.11-next</autopoi.version>
+		<poi.version>5.2.2</poi.version>
 		<xerces.version>2.9.1</xerces.version>
 		<guava.version>29.0-jre</guava.version>
 		<commons-lang.version>3.10</commons-lang.version>
@@ -58,11 +58,11 @@
 				<artifactId>poi-ooxml</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-ooxml-schemas</artifactId>
-				<version>${poi.version}</version>
-			</dependency>
+<!--			<dependency>-->
+<!--				<groupId>org.apache.poi</groupId>-->
+<!--				<artifactId>poi-ooxml-schemas</artifactId>-->
+<!--				<version>${poi.version}</version>-->
+<!--			</dependency>-->
 			<!-- sax 读取时候用到的 -->
 			<dependency>
 				<groupId>xerces</groupId>
