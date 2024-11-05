@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>top.toycat</groupId>
+		<groupId>io.github.toycat93</groupId>
 		<artifactId>autopoi-parent</artifactId>
 		<version>1.4.11-next</version>
 	</parent>
@@ -11,7 +11,7 @@
 	<dependencies>
 		<!-- autopoi -->
 		<dependency>
-			<groupId>top.toycat</groupId>
+			<groupId>io.github.toycat93</groupId>
 			<artifactId>autopoi</artifactId>
 			<version>${autopoi.version}</version>
 		</dependency>

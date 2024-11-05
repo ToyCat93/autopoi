@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>top.toycat</groupId>
+	<groupId>io.github.toycat93</groupId>
 	<artifactId>autopoi-parent</artifactId>
 
 	<version>1.4.11-next</version>
@@ -135,7 +135,7 @@
 			
 			<!-- 模块版本 -->
 			<dependency>
-				<groupId>top.toycat</groupId>
+				<groupId>io.github.toycat93</groupId>
 				<artifactId>autopoi</artifactId>
 				<version>${autopoi.version}</version>
 			</dependency>
@@ -243,16 +243,14 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!--Nexus Staging Maven插件是将组件部署到OSS并将其发布到Central Repository的推荐方法-->
 					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>0.6.0</version>
 						<extensions>true</extensions>
 						<configuration>
-							<serverId>oss</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+							<publishingServerId>central</publishingServerId>
+							<autoPublish>true</autoPublish>
 						</configuration>
 					</plugin>
 				</plugins>
